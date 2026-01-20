@@ -22,12 +22,12 @@ loom {
 	splitEnvironmentSourceSets()
 
 	mods {
-		"modid" {
+		"antiespbypass" { // Cambiado de "modid" a "antiespbypass"
 			sourceSet sourceSets.main
 			sourceSet sourceSets.client
 		}
 	}
-
+	
 }
 
 dependencies {
