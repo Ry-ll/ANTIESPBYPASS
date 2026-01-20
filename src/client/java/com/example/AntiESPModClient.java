@@ -10,6 +10,6 @@ public class AntiESPModClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-       
+        // Aquí puedes poner logs si quieres, pero nada de WorldRenderEvents por ahora
     }
 }
