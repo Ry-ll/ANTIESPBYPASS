@@ -1,13 +1,9 @@
 {
   "required": true,
-  "minVersion": "0.8",
-  "package": "me.antiespbypass.mixin",
+  "package": "com.example.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
   "client": [
-    "ClientPlayNetworkHandlerMixin"
+    "AntiESPMixin"
   ],
-  "injectors": {
-    "defaultRequire": 1
-  }
+  "injectors": { "defaultRequire": 1 }
 }
