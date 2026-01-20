@@ -12,6 +12,9 @@
   "icon": "assets/antiespbypass/icon.png",
   "environment": "*",
   "entrypoints": {
+    "main": [
+      "com.example.AntiESPMod"
+    ],
     "client": [
       "com.example.AntiESPModClient"
     ]
