@@ -2,7 +2,9 @@
   "required": true,
   "package": "com.example.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [],
+  "client": [
+    "AntiESPMixin"
+  ],
   "injectors": {
     "defaultRequire": 1
   }
