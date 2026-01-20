@@ -24,6 +24,10 @@ public class AntiESPMixin {
     private void onBlockEntityData(ClientboundBlockEntityDataPacket packet, CallbackInfo ci) {
         if (packet.getType() == BlockEntityType.CHEST) {
             AntiESPModClient.CACHE.put(packet.getPos(), 1);
+        } else if (packet.getType() == BlockEntityType.SHULKER_BOX) {
+            AntiESPModClient.CACHE.put(packet.getPos(), 2);
+        } else if (packet.getType() == BlockEntityType.ENDER_CHEST) {
+            AntiESPModClient.CACHE.put(packet.getPos(), 3);
         }
     }
 }
