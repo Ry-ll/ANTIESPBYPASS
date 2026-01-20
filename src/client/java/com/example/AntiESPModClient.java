@@ -20,21 +20,21 @@ public class AntiESPModClient implements ClientModInitializer {
             var consumers = context.consumers();
             var cameraPos = context.camera().getPosition();
             
-            for (Map.Entry<BlockPos, Integer> entry : CACHE.entrySet()) {
-                BlockPos pos = entry.getKey();
-                
+            CACHE.forEach((pos, type) -> {
                 matrices.pushPose();
-                
                 double x = pos.getX() - cameraPos.x;
                 double y = pos.getY() - cameraPos.y;
                 double z = pos.getZ() - cameraPos.z;
-                
                 matrices.translate(x, y, z);
 
-                DebugRenderer.drawFilledBox(matrices, consumers, 0, 0, 0, 1, 1, 1, 1.0f, 0.5f, 0.0f, 0.4f);
-                
+                float r = 1f, g = 1f, b = 1f;
+                if (type == 1) { r = 1.0f; g = 0.6f; b = 0.0f; }
+                else if (type == 2) { r = 1.0f; g = 0.0f; b = 0.8f; }
+                else if (type == 3) { r = 0.6f; g = 0.0f; b = 1.0f; }
+
+                DebugRenderer.drawFilledBox(matrices, consumers, 0, 0, 0, 1, 1, 1, r, g, b, 0.4f);
                 matrices.popPose();
-            }
+            });
         });
     }
 }
