@@ -4,7 +4,11 @@
   "version": "1.0.0",
   "name": "AntiESP Bypass",
   "entrypoints": {
-    "client": [ "me.antiespbypass.AntiESPMod" ]
+    "client": [
+      "com.example.ExampleMod"
+    ]
   },
-  "mixins": [ "antiespbypass.mixins.json" ]
+  "mixins": [
+    "antiespbypass.mixins.json"
+  ]
 }
