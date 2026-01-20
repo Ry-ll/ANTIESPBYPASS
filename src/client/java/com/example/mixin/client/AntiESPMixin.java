@@ -1,6 +1,6 @@
 package com.example.mixin.client;
 
-import com.example.ExampleModClient;
+import com.example.AntiESPModClient;
 import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
 import net.minecraft.network.protocol.game.ClientboundBlockUpdatePacket;
@@ -15,7 +15,7 @@ public class AntiESPMixin {
 
     @Inject(method = "handleBlockUpdate", at = @At("HEAD"), cancellable = true)
     private void onBlockUpdate(ClientboundBlockUpdatePacket packet, CallbackInfo ci) {
-        if (ExampleModClient.CACHE.containsKey(packet.getPos()) && packet.getBlockState().isAir()) {
+        if (AntiESPModClient.CACHE.containsKey(packet.getPos()) && packet.getBlockState().isAir()) {
             ci.cancel();
         }
     }
@@ -23,7 +23,7 @@ public class AntiESPMixin {
     @Inject(method = "handleBlockEntityData", at = @At("HEAD"))
     private void onBlockEntityData(ClientboundBlockEntityDataPacket packet, CallbackInfo ci) {
         if (packet.getType() == BlockEntityType.CHEST) {
-            ExampleModClient.CACHE.put(packet.getPos(), 1);
+            AntiESPModClient.CACHE.put(packet.getPos(), 1);
         }
     }
 }
