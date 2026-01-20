@@ -10,6 +10,6 @@ public class AntiESPModClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-   
+       
     }
 }
