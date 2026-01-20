@@ -2,13 +2,12 @@ package com.example;
 
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.debug.DebugRenderer;
 import net.minecraft.core.BlockPos;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.Map;
 
-public class ExampleModClient implements ClientModInitializer {
+public class AntiESPModClient implements ClientModInitializer {
     
     public static final Map<BlockPos, Integer> CACHE = new ConcurrentHashMap<>();
 
@@ -32,12 +31,7 @@ public class ExampleModClient implements ClientModInitializer {
                 
                 matrices.translate(x, y, z);
 
-                float r = 1.0f;
-                float g = 0.5f;
-                float b = 0.0f;
-                float a = 0.4f;
-
-                DebugRenderer.drawFilledBox(matrices, consumers, 0, 0, 0, 1, 1, 1, r, g, b, a);
+                DebugRenderer.drawFilledBox(matrices, consumers, 0, 0, 0, 1, 1, 1, 1.0f, 0.5f, 0.0f, 0.4f);
                 
                 matrices.popPose();
             }
