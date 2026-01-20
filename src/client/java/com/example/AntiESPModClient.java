@@ -6,12 +6,10 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.Map;
 
 public class AntiESPModClient implements ClientModInitializer {
-    
     public static final Map<BlockPos, Integer> CACHE = new ConcurrentHashMap<>();
 
     @Override
     public void onInitializeClient() {
-    
+   
     }
-}
 }
