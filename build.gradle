@@ -19,15 +19,23 @@ repositories {
 }
 
 loom {
-	splitEnvironmentSourceSets()
+    splitEnvironmentSourceSets()
 
-	mods {
-		"antiespbypass" { // Cambiado de "modid" a "antiespbypass"
-			sourceSet sourceSets.main
-			sourceSet sourceSets.client
-		}
-	}
-	
+    mods {
+        "antiespbypass" {
+            sourceSet sourceSets.main
+            sourceSet sourceSets.client
+        }
+    }
+    
+    runs {
+        client {
+            client()
+            configName = "Minecraft Client"
+            ideConfigGenerated = true
+            runDir = "run"
+        }
+    }
 }
 
 dependencies {
