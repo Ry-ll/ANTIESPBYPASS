@@ -3,12 +3,25 @@
   "id": "antiespbypass",
   "version": "1.0.0",
   "name": "AntiESP Bypass",
+  "description": "Bypasses Donut SMP Anti-ESP",
+  "authors": [
+    "TuNombre"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/antiespbypass/icon.png",
+  "environment": "*",
   "entrypoints": {
     "client": [
-      "com.example.ExampleMod"
+      "com.example.ExampleModClient"
     ]
   },
   "mixins": [
     "antiespbypass.mixins.json"
-  ]
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": "1.21.4",
+    "java": "21"
+  }
 }
