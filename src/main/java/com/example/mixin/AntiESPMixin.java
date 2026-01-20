@@ -15,7 +15,6 @@ public class AntiESPMixin {
 
     @Inject(method = "handleBlockUpdate", at = @At("HEAD"), cancellable = true)
     private void onBlockUpdate(ClientboundBlockUpdatePacket packet, CallbackInfo ci) {
-        // Si el cofre ya esta en nuestra lista, no dejamos que el server lo borre
         if (ExampleModClient.CACHE.containsKey(packet.getPos()) && packet.getBlockState().isAir()) {
             ci.cancel();
         }
@@ -23,7 +22,6 @@ public class AntiESPMixin {
 
     @Inject(method = "handleBlockEntityData", at = @At("HEAD"))
     private void onBlockEntityData(ClientboundBlockEntityDataPacket packet, CallbackInfo ci) {
-        // Capturamos el cofre en el momento que el server lo revela
         if (packet.getType() == BlockEntityType.CHEST) {
             ExampleModClient.CACHE.put(packet.getPos(), 1);
         }
