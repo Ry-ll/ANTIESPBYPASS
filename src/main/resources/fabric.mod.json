@@ -3,9 +3,9 @@
   "id": "antiespbypass",
   "version": "1.0.0",
   "name": "AntiESP Bypass",
-  "description": "Bypasses Donut SMP Anti-ESP",
+  "description": "Bypass for Donut SMP Anti-ESP",
   "authors": [
-    "TuNombre"
+    "Ry-ll"
   ],
   "contact": {},
   "license": "MIT",
@@ -13,11 +13,12 @@
   "environment": "*",
   "entrypoints": {
     "client": [
-      "com.example.ExampleModClient"
+      "com.example.AntiESPModClient"
     ]
   },
   "mixins": [
-    "antiespbypass.mixins.json"
+    "antiespbypass.mixins.json",
+    "antiespbypass.client.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.15.0",
